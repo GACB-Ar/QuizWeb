@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<form class="mt-2 form-signin text-center" method="POST">
+  {% csrf_token %}
+
+  {% load static %}
+  <img class="mb-4" width="72" height="57" role="img" src="{% static 'images/quiz.svg' %}" alt="logo">
+  <h1 class="h3 mb-3 fw-normal">Nuevo Usuario</h1>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.first_name.label_tag }}
+    </div>
+    {{form.first_name}}
+  </div>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.last_name.label_tag }}
+    </div>
+    {{form.last_name}}
+  </div>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.email.label_tag }}
+    </div>
+    {{form.email}}
+  </div>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.username.label_tag }}
+    </div>
+    {{form.username}}
+  </div>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.password1.label_tag }}
+    </div>
+    {{form.password1}}
+  </div>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.password2.label_tag }}
+    </div>
+    {{form.password2}}
+  </div>
+
+
+  {% if form.errors %}
+  {% for field in form %}
+  {% for error in field.errors %}
+  <div class="text-center text-danger">
+    Error: {{ error }}
+  </div>
+  {% endfor %}
+  {% endfor %}
+  {% endif %}
+
+  <button class="btn btn-lg btn-primary" type="submit">Crear</button>
+  <a class="text-muted text-decoration-none text-blue" href="{% url 'iniciar_sesion' %}">iniciar sesión</a>
+</form>
+
+{% endblock %}

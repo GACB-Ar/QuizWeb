@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/formulario.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <form action="php/registro_usuarios_bd.php" method="POST" class="form-registrar">
+        <h2>Formulario de Registro</h2>
+        <input type="hidden" id="respuestaC" value="{{form.ans}}">
+        <input type="text" id="nombre" name="nombre" placeholder="ingrese su nombre"  class="form-input">
+        <input type="text" name="apellido" placeholder="ingrese su apellido"  class="form-input">
+        <input type="email" name="email" placeholder="ingrese su correo"  class="form-input">
+        <input type="password" name="contrasenia" placeholder="ingrese su contraseña"  class="form-input">
+        <input type="password" name="contrasenia" placeholder="ingrese nuevamente su contraseña"  class="form-input">
+        <input type="text"  name="usuario" placeholder="nombre de usuario"  class="form-input">
+        <input type="submit" value="Registrarme" class="boton">
+        <p><a href="#">¿Ya tiene cuenta?</a></p>
+    </form>
+
+</body>
+
+</html>

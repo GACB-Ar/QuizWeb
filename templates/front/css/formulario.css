@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, blue, rgba(255, 255, 255, 0.596), green);
+}
+
+.form-registrar {
+    width: 40%;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 4px;
+    font-family:'Montserrat', sans-serif;
+    color: #fff;
+    box-shadow: 7px 13px 37px #000;
+
+}
+
+.form-registrar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-input {
+    width: 100%;
+    background: #24303c;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+
+.form-registrar p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.form-registrar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.form-registrar a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.boton {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: #fff;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+
+    .form-registrar {
+        width: 60%;
+
+    }
+
+    .form-registrar p {
+        height: 40px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 40px;
+    }
+}

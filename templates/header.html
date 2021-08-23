@@ -1,0 +1,30 @@
+<header>
+  <div class="px-3 py-2 bg-dark text-white">
+    {% load static %}
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+          href="{% url 'inicio' %}"><img class="bi me-2" width="40" height="32" role="img"
+            src="{% static 'images/quiz.svg' %}" alt="logo">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          {% if request.user.is_authenticated %}
+          {% if request.user.is_staff %}
+          <li><a class="nav-link text-white" href="/admin/core/quesmodel/add">Agregar Preguntas</a></li>
+          {% else %}
+          <li class="nav-link text-white">puntaje: {{request.user.puntaje }}</li>
+          <li><a class="nav-link text-white" href="#">ranking</a></li>
+          {% endif %}
+          <li><a class="nav-link text-white" href="{% url 'inicio' %}"> 🇦🇷 </a></li>
+          <li><a class="nav-link text-white" href="{% url 'cerrar_sesion' %}">salir</a></li>
+          {% else %}
+          <li><a class="nav-link text-white" href="{% url 'iniciar_sesion' %}">ingresar</a></li>
+          <li><a class="nav-link text-white" href="{% url 'crear_usuario' %}">registrarse</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</header>

@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-AR" class="h-100">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    {% block title %}
+    Bienvenidos - Juego de Preguntas y Respuestas
+    {% endblock %}
+  </title>
+
+  <meta name="description"
+    content="Proyecto Python + Django + SQLite3 - Informatorio 2021 - Juego de Preguntas y Respuestas">
+  <meta name="author" content="Comisión 6 - Grupo 7 - Trabajo Final (Informatorio 2021)">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
+    integrity="sha512-F7WyTLiiiPqvu2pGumDR15med0MDkUIo5VTVyyfECR5DZmCnDhti9q5VID02ItWjq6fvDfMaBaDl2J3WdL1uxA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    
+
+<body class="d-flex flex-column h-100">
+  {% include 'header.html' %}
+  <main>
+    <div class="container-fluid grid">
+      {% block contenido %}
+      {% endblock %}
+    </div>
+  </main>
+  {% include 'footer.html' %}
 </body>
+
 </html>

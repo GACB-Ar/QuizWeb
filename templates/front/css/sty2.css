@@ -1,0 +1,171 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Montserrat', sans-serif;
+    
+}
+body{
+    position: relative;
+}
+header{
+    background: linear-gradient(to right, blue, rgba(255, 255, 255, 0.596), green);
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+.logo>h2{
+    padding-left:20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    padding: 15px;
+}
+a:hover{
+    background-color: rgba(29, 29, 219, 0.667);
+    color: #fff;
+    border-radius: 20px;
+}
+header,body,footer{
+    font-family:'Roboto', sans-serif;
+}
+.open-menu,
+.close-menu{
+    display: none;
+}
+
+main{
+    width: 100%;
+    height: 91vh;
+    background: linear-gradient(to right, rgb(195, 0, 255), rgba(255, 255, 255, 0.76), rgb(128, 58, 0));
+}
+
+.container{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding-top: 30px;
+    
+   
+}
+.plaza{
+    display: flex;
+    flex-direction: column;
+    background: blueviolet url(./img/plazaCentral.jfif) no-repeat;
+    background-size: cover;
+    width: 33%;
+    height: 340px;
+    color: black;
+}
+.plaza>h2,.domo>h2,.escultura>h2{
+    text-align: center;
+    font-weight: bold;
+}
+.domo{
+    display: flex;
+    flex-direction: column;
+    background: blueviolet url(./img/domo.jpg) no-repeat;
+    background-size: cover;
+    width: 33%;
+    height: 340px;
+    color: black;
+}
+
+.escultura{
+    display: flex;
+    flex-direction: column;
+    background: blueviolet url(./img/esculturaEntrada.jpg) no-repeat;
+    background-size: cover;
+    width: 33%;
+    height: 340px;
+    color: black;
+    
+}
+footer{
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
+    background: linear-gradient(to right, blue, rgba(255, 255, 255, 0.76), green);
+}
+footer>p{
+    font-size: 15px;
+    font-weight:  bold;
+    padding: 5px;
+}
+
+@media (max-width:950px){
+    header{
+        background: linear-gradient(to right, blue, rgba(255, 255, 255, 0.596), green);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        
+    }
+    .logo>h2{
+        color: rgb(255, 136, 0);
+        font-size: 40px;
+        font-weight: bold;
+    }
+    
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        
+    }
+    a{
+        text-decoration: none;
+        display: inline-block;
+        color: #000;
+        font-size: 20px;
+        font-weight: bold;
+        padding:20px,40px,20px,40px;
+    }
+    a:hover{
+        background-color: rgba(29, 29, 219, 0.667);
+        color: #000;
+        border-radius: 20px;
+    }
+    header,body,footer{
+        font-family:'Roboto', sans-serif;
+    }
+    .open-menu,
+    .close-menu{
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+    .open-menu{
+        align-self: flex-end;
+        width: 30px;
+        height: 30px;
+    }
+
+
+
+
+    footer>p{
+        width: 100%;
+    }
+}
+
+
+

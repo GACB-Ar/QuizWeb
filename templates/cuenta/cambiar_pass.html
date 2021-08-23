@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<form class="mt-2 form-signin text-center" method="POST">
+  {% csrf_token %}
+
+  {% load static %}
+  <img class="mb-4" width="72" height="57" role="img" src="{% static 'images/quiz.svg' %}" alt="logo">
+  <h1 class="h3 mb-3 fw-normal">Cambiar Contraseña</h1>
+
+  <!-- {#{#form.non_field_errors}}
+  {#% for field in form %}
+  {#{#field.label_tag}}
+  {#{# field }}
+  {#{# field.help_text | safe }}
+  {#%# if field.errors %}
+  {#{# field.errors }}
+  {#%# endif %}
+  {#%# endfor %} -->
+
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.old_password.label_tag }}
+    </div>
+    {{form.old_password}}
+  </div>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.new_password1.label_tag }}
+    </div>
+    {{form.new_password1}}
+  </div>
+  <div class="mb-3 mt-3">
+    <div>
+      {{ form.new_password2.label_tag }}
+    </div>
+    {{form.new_password2}}
+  </div>
+
+  {% if form.errors %}
+  {% for field in form %}
+  {% for error in field.errors %}
+  <div class="text-center text-danger">
+    Error: {{ error }}
+  </div>
+  {% endfor %}
+  {% endfor %}
+  {% endif %}
+
+  <button class="btn btn-lg btn-primary" type="submit">Aceptar</button>
+  <a class="text-muted text-decoration-none text-blue" href="{% url 'inicio' %}">cancelar</a>
+</form>
+
+{% endblock %}
