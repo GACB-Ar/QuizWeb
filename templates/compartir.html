@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load social_share%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        {% post_to_facebook object_or_url "Publicar en Facebook!" %} 
+        {% post_to_twitter "Juego de preguntas!: {{object.title}}. ¡Compruébalo!" object_or_url "Publicar en Twitter"%}   
+        {% post_to_whatsapp object_or_url "Compartir a través de WhatsApp" %}
+    </div>
+</html>
