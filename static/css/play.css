@@ -8,13 +8,6 @@ html {
     box-sizing: inherit;
 }
 
-html,
-body {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-}
-
 body {
     background: #a8c0ff;
     font-family: 'Comfortaa', cursive;
@@ -34,18 +27,22 @@ section {
     background: #a8c0ff;
     background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);
     background: linear-gradient(to right, #3f2b96, #a8c0ff);
-    padding-top: 80px;
+    /* padding-top: 80px; */
+    border-radius: 10px;
+    padding: 5px 20px 50px;
     overflow-y: hidden;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-main {
+/* main {
     background: rgba(217, 214, 228, 0.12);
     border-radius: 10px;
     padding: 5px 20px 50px;
     width: 95%;
     max-width: 500px;
     margin: 0 auto 214px;
-}
+} */
 
 .text-container {
     text-align: center;
@@ -60,14 +57,21 @@ main {
     height: 0.0625rem;
     width: 0.0625rem;
     position: absolute;
+    visibility: hidden;
+}
+
+[type=radio]:checked ~ span {
+    background: #000;
+    color: #fff;
+    font-weight: bolder;
 }
 
 label {
     display: flex;
     align-items: center;
     border-radius: 5px;
-    background: rgba(255, 5, 5, 0.72);
-    margin-bottom: 15px;
+    /* background: rgba(255, 5, 5, 0.72); */
+    /* margin-bottom: 15px; */
     padding: 6px 0;
     position: relative;
     width: 100%;
@@ -97,15 +101,15 @@ label .icon {
     top: 12px;
 }
 
-label .jfdedgwfzexf4hjin {
+/* label .jfdedgwfzexf4hjin {
     width: 18px;
 }
 
 label .jdsjkefkefkefefexco {
     width: 22px;
-}
+} */
 
-.jshdgdgwgdwfdfwdwjfdjwwdwdco:checked+label {
+/* .jshdgdgwgdwfdfwdwjfdjwwdwdco:checked+label {
     background: rgb(76, 245, 194);
     font-weight: bold;
     text-transform: uppercase;
@@ -126,12 +130,12 @@ label .jdsjkefkefkefefexco {
 .jshdgdgwgdwfdfwdwjfdjwwdwdin:checked+label .alphabet {
     background: #000;
     color: #fff;
-}
+} */
 
-.one-a:valid+label,
+/* .one-a:valid+label,
 .two-c:valid+label,
-.three-c:valid+label,
- {
+.three-c:valid+label
+{
     animation: flash 0.6s ;
 }
 
@@ -155,8 +159,8 @@ label .jdsjkefkefkefefexco {
     100% {
         background-color: #4cf5c2;
     }
-}
-
+} */
+/* 
 input:invalid+label {
     background: #fff;
 }
@@ -168,7 +172,7 @@ input:invalid+label:hover {
 input:valid+label {
     color: #fff;
     pointer-events: none
-}
+} */
 
 #btn {
     border: 1px solid #000;
@@ -202,7 +206,7 @@ form:invalid #btn {
     background: #000;
     color: #fff;
 }
-
+/* 
 .score-counter {
     border-radius: 8px;
     display: flex;
@@ -225,7 +229,7 @@ form:invalid #btn {
 
 .score-counter::after {
     content: counter(points) "/5";
-}
+} */
 
 .one-a:checked,
 .two-c:checked,
@@ -234,12 +238,12 @@ form:invalid #btn {
 .five-a:checked {
     counter-increment: points;
 }
-
+/* 
 #game-over {
     background: linear-gradient(rgb(28, 22, 49), rgba(18, 18, 25, 0.9)), repeating-linear-gradient(0, transparent, transparent 2px, black 3px, black 3px);
     font-family: 'Bungee', cursive;
     /* position: absolute; */
-    width: 100%;
+    /*width: 100%;
     height: 100vh;
 }
 
@@ -260,7 +264,7 @@ form:invalid #btn {
     line-height: 1.2;
     margin: 0;
     position: relative;
-}
+} */
 
 h1::before {
     content: attr(data-heading);
@@ -307,7 +311,7 @@ h1::before {
         background-position: 100%;
     }
 }
-
+/* 
 .over-text-cont {
     text-align: center;
 }
@@ -319,8 +323,8 @@ h1::before {
 .over-text-cont h2::after {
     content: counter(points) "0/50";
     margin-left: 15px;
-}
-
+} */
+/* 
 #refresh {
     color: #fff;
     position: relative;
@@ -341,7 +345,7 @@ h1::before {
     width: 50px;
     height: auto;
     animation: pulse 1s infinite;
-}
+} */
 
 
 /* MEDIA QUERY */
@@ -367,7 +371,7 @@ h1::before {
         margin: 0 .9rem 0 .7rem;
     }
 
-    .jshdgdgwgdwfdfwdwjfdjwwdwdco:checked+label {
+    /* .jshdgdgwgdwfdfwdwjfdjwwdwdco:checked+label {
         -webkit-text-stroke: .1px #fff;
     }
 
@@ -377,8 +381,8 @@ h1::before {
 
     label .jfdedgwfzexf4hjin {
         width: 14px;
-    }
-
+    } */
+/* 
     #game-over h1 {
         font-size: 3rem;
     }
@@ -391,8 +395,8 @@ h1::before {
 
     .score-text {
         margin: 0 20px 0 0;
-    }
-
+    } */
+/* 
     .over-text-cont h2 {
         margin-bottom: 40px;
     }
@@ -408,7 +412,7 @@ h1::before {
     .refresh-content {
         display: grid;
         font-size: .8rem;
-    }
+    } */
 }
 
 @media (max-width: 325px) {
@@ -421,12 +425,12 @@ h1::before {
         margin: 0 .55rem 0 .7rem;
     }
 
-    label .jdsjkefkefkefefexco {
+    /* label .jdsjkefkefkefefexco {
         width: 14px;
     }
 
     label .jfdedgwfzexf4hjin {
         width: 12px;
-    }
+    } */
 
 }

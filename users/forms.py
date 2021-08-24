@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.db import models
 from django.db.models import fields
 from .models import Perfil
@@ -25,4 +25,14 @@ class EditarPerfilForm(UserChangeForm):
       "last_name",
       "username",
       "email",
+    )
+
+
+class CambiarPassword(PasswordChangeForm):
+  class Meta:
+    model = Perfil
+    fields = (
+      "old_password",
+      "new_password1",
+      "new_password2",
     )

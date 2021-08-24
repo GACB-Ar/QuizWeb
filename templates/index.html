@@ -6,16 +6,24 @@
   {% if request.user.is_authenticated %}
   <p>usuario: {{request.user.username }}</p>
   <p>puntaje: {{request.user.puntaje }}</p>
-  <a class="btn btn-primary" href="{% url 'inicio' %}">perfil</a>
+  <a class="btn btn-primary" href="{% url 'editar_usuario' %}">Editar Perfil</a>
   {% if request.user.is_staff %}
   <a class="btn btn-primary" href="/admin/core/quesmodel/add">Agregar Preguntas</a>
   {% else %}
   <a class="btn btn-primary" href="{% url 'jugar' %}">Jugar</a>
   {% endif %}
-  <a class="btn btn-primary" href="{% url 'cerrar_sesion' %}">Cerrar sesion</a>
+  <a class="btn btn-primary" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
   {% else %}
-  <a class="btn btn-primary" href="{% url 'iniciar_sesion' %}">Iniciar sesion</a>
-  <a class="btn btn-primary" href="{% url 'crear_usuario' %}">registrarse</a>
+  <a class="btn btn-primary" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
+  <a class="btn btn-primary" href="{% url 'crear_usuario' %}">Registrarse</a>
+  {% endif %}
+
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
   {% endif %}
 </div>
 

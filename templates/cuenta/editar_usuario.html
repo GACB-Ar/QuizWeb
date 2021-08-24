@@ -7,7 +7,7 @@
 
   {% load static %}
   <img class="mb-4" width="72" height="57" role="img" src="{% static 'images/quiz.svg' %}" alt="logo">
-  <h1 class="h3 mb-3 fw-normal">Nuevo Usuario</h1>
+  <h1 class="h3 mb-3 fw-normal">Editar Usuario</h1>
   <div class="mb-3 mt-3">
     <div>
       {{ form.first_name.label_tag }}
@@ -32,19 +32,6 @@
     </div>
     {{form.username}}
   </div>
-  <div class="mb-3 mt-3">
-    <div>
-      {{ form.password1.label_tag }}
-    </div>
-    {{form.password1}}
-  </div>
-  <div class="mb-3 mt-3">
-    <div>
-      {{ form.password2.label_tag }}
-    </div>
-    {{form.password2}}
-  </div>
-
 
   {% if form.errors %}
   {% for field in form %}
@@ -56,8 +43,10 @@
   {% endfor %}
   {% endif %}
 
-  <button class="btn btn-lg btn-primary" type="submit">Crear</button>
-  <a class="text-muted text-decoration-none text-blue" href="{% url 'iniciar_sesion' %}">iniciar sesión</a>
+  <button class="btn btn-lg btn-primary" type="submit">Aceptar</button>
+  <a class="text-muted text-decoration-none text-blue" href="{% url 'change_password' %}">cambiar contraseña</a>
+  <span> | </span>
+  <a class="text-muted text-decoration-none text-blue" href="{% url 'inicio' %}">cancelar</a>
 </form>
 
 {% endblock %}

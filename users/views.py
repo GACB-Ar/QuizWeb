@@ -1,9 +1,13 @@
 from django import forms
 from django.shortcuts import redirect, render, resolve_url
-#from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import EditarPerfilForm, NuevoPerfilForm
-from django.contrib.auth import authenticate, login, logout
+from .forms import EditarPerfilForm, NuevoPerfilForm, CambiarPassword
+from .models import Perfil
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.contrib.auth.password_validation import password_changed
+from django.contrib.auth.hashers import make_password, check_password
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 #parte del front
@@ -50,10 +54,10 @@ def editar_usuario(request):
   if request.method == "POST":
     form = EditarPerfilForm(request.POST, instance=perfil)
     if form.is_valid():
-      user = form.save()
+      form.save()
       return redirect("inicio")
   contexto = {"form": form}
-  return render(request, "cuenta/nuevo_usuario.html", contexto)
+  return render(request, "cuenta/editar_usuario.html", contexto)
 
 
 def iniciar_sesion(request):
@@ -79,5 +83,19 @@ def cerrar_sesion(request):
   return redirect("inicio")
 
 
+
+@login_required
 def pass_cambiada(request):
-  return redirect("inicio")
+  form = CambiarPassword(request.user)
+
+  if request.method == 'POST':
+    form = CambiarPassword(request.user, request.POST)
+    if form.is_valid():
+      user = Perfil.objects.get(username=form.user.cleaned_data["username"])
+      password = form.cleaned_data["new_password1"]
+      form.user.set_password(password)
+      form.save()
+      update_session_auth_hash(request, user)
+
+  contexto = {"form": form}
+  return render(request, "cuenta/cambiar_pass.html", contexto)
