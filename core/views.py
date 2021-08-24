@@ -8,7 +8,7 @@ def inicio(request):
   # if request.user.is_authenticated: #and request.user.is_staff:
   #   template = "admin_dashboard.html"
   # else:
-  template = "index.html"
+  template = "index2.html"
   contexto = {}
   return render(request, template, contexto)
 
@@ -59,17 +59,7 @@ def jugar(request):
     }
     return render(request, "play.html", context)
   elif  request.method == 'POST':
-<<<<<<< HEAD
     if numeroPregunta<5:
-=======
-    
-    
-    if numeroPregunta>5:
-      # return render(request,'index2.html')
-      return redirect("index2")
-    else:
-      #print(request.POST)
->>>>>>> main
       questions = QuesModel.objects.get(pk=int(request.POST.get("ID")))
       opcionSeleccionada=request.POST.get("opcionMarcada")
       if request.POST.get(opcionSeleccionada) == questions.ans:

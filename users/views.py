@@ -42,7 +42,7 @@ def crear_usuario(request):
 
       return redirect("inicio")
   contexto = {"form": form}
-  return render(request, "cuenta/nuevo_usuario.html", contexto)
+  return render(request, "cuenta/formulario.html", contexto)
 
 
 def editar_usuario(request):
@@ -74,7 +74,7 @@ def iniciar_sesion(request):
 
     print("errores: ", form.errors)
   contexto = {"form": form}
-  return render(request, "cuenta/login.html", contexto)
+  return render(request, "cuenta/inicio_de_sesion.html", contexto)
 
 
 def cerrar_sesion(request):

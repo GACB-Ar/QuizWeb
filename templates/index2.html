@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="css/normalize.css">-->
-    <link rel="stylesheet" href="../static/css/sty2.css">
-    <title>PROYECTO CHACO</title>
-</head>
-<body>
-    <header>
-        <div class="logo">  
-            <h2>CARPINCHO</i></h2>
-        </div>
-        <ul class="menu">
-                <li><a href="{% static 'inicio_de_sesion.html' %}" target="_blank">Iniciar Sesión</a></li>
-                <li><a href="{% static 'formulario.html' %}">Crear Usuario</a></li>
-        </ul>
-        
-    </header>
+{% extends 'base.html' %}
+
+{% block contenido %}
     <main>
         
         <section class="container">
@@ -36,8 +17,4 @@
             
         </section>
     </main>
-    <footer>
-        <p> Informatorio 2021 - Comisión 6 - Grupo 7</p>
-    </footer>
-</body>
-</html>
+{% endblock %}

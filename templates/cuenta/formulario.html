@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/formulario.css">
-    <title>Login</title>
-</head>
-
-<body>
+{% block contenido %}
     <form action="php/registro_usuarios_bd.php" method="POST" class="form-registrar">
         <h2>Formulario de Registro</h2>
         <input type="hidden" id="respuestaC" value="{{form.ans}}">
@@ -22,7 +13,5 @@
         <input type="submit" value="Registrarme" class="boton">
         <p><a href="#">¿Ya tiene cuenta?</a></p>
     </form>
+{% endblock %}
 
-</body>
-
-</html>
