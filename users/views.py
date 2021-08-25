@@ -19,6 +19,8 @@ def inicio_de_sesion(request):
   contexto = {}
   return render(request, template, contexto)
 
+
+
 def formulario(request):
   # if request.user.is_authenticated: #and request.user.is_staff:
   #   template = "admin_dashboard.html"

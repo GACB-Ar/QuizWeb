@@ -12,7 +12,6 @@ urlpatterns = [
   #vista de iniciar sesion
 
   path("inicio_de_sesion/", views.iniciar_sesion, name="inicio_de_sesion"),
-  
   #login
   path(
     "iniciar_sesion/",
