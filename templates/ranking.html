@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<h1 class="py-1 text-center">Ranking</h1>
+<div class="py-5 text-center container">
+  {% if request.user.is_authenticated %}
+  {% for user in form %}
+  <p># {{ forloop.counter }}: {{ user.username }} | {{ user.puntaje }}</p>
+  {% endfor %}
+  {% else %}
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <a class="btn btn-lg btn-outline-primary" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
+    <a class="btn btn-lg btn-outline-success" href="{% url 'crear_usuario' %}">Registrarse</a>
+  </div>
+  {% endif %}
+
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+
+{% endblock %}

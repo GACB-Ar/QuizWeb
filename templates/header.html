@@ -1,13 +1,23 @@
 <header>
   {% load static %}
-  <div class="logo">  
+  <div class="logo">
     <h2><a href="{% url 'inicio' %}">CARPINCHO</a></i></h2>
   </div>
+
   <ul class="menu">
-        <li><a href="{% url 'inicio_de_sesion' %}">Iniciar Sesión</a></li>
-        <li><a href="{% url 'formulario' %}">Crear Usuario</a></li>
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_staff %}
+    <li><a class="nav-link text-white" href="/admin/core/quesmodel/add">agregar preguntas</a></li>
+    <li><a class="nav-link text-white" href="/admin/users/perfil/">usuarios</a></li>
+    {% else %}
+    <li class="nav-link text-white">puntaje: {{request.user.puntaje }}</li>
+    <li><a class="nav-link text-white" href="{% url 'ranking' %}">ranking</a></li>
+    {% endif %}
+    <li><a class="nav-link text-white" href="{% url 'editar_usuario' %}">editar perfil</a></li>
+    <li><a class="nav-link text-white" href="{% url 'cerrar_sesion' %}">salir</a></li>
+    {% else %}
+    <li><a class="nav-link text-white" href="{% url 'iniciar_sesion' %}">ingresar</a></li>
+    <li><a class="nav-link text-white" href="{% url 'crear_usuario' %}">registrarse</a></li>
+    {% endif %}
   </ul>
-
 </header>
-
-  

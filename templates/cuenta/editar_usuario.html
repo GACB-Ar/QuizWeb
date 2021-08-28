@@ -2,35 +2,32 @@
 
 {% block contenido %}
 
-<form class="mt-2 form-signin text-center" method="POST">
+<form class="form-registrar" method="POST">
   {% csrf_token %}
-
-  {% load static %}
-  <img class="mb-4" width="72" height="57" role="img" src="{% static 'images/quiz.svg' %}" alt="logo">
-  <h1 class="h3 mb-3 fw-normal">Editar Usuario</h1>
-  <div class="mb-3 mt-3">
-    <div>
+  <h2>Formulario de Edición</h2>
+  <div>
+    <label for="{{form.first_name.id_for_label}}" id="nombre">
       {{ form.first_name.label_tag }}
-    </div>
-    {{form.first_name}}
+    </label>
+    {{ form.first_name }}
   </div>
-  <div class="mb-3 mt-3">
-    <div>
+  <div>
+    <label for="{{form.last_name.id_for_label}}">
       {{ form.last_name.label_tag }}
-    </div>
-    {{form.last_name}}
+    </label>
+    {{ form.last_name }}
   </div>
-  <div class="mb-3 mt-3">
-    <div>
+  <div>
+    <label for="{{form.email.id_for_label}}">
       {{ form.email.label_tag }}
-    </div>
-    {{form.email}}
+    </label>
+    {{ form.email }}
   </div>
-  <div class="mb-3 mt-3">
-    <div>
+  <div>
+    <label for="{{form.username.id_for_label}}">
       {{ form.username.label_tag }}
-    </div>
-    {{form.username}}
+    </label>
+    {{ form.username }}
   </div>
 
   {% if form.errors %}
@@ -43,10 +40,12 @@
   {% endfor %}
   {% endif %}
 
-  <button class="btn btn-lg btn-primary" type="submit">Aceptar</button>
-  <a class="text-muted text-decoration-none text-blue" href="{% url 'change_password' %}">cambiar contraseña</a>
-  <span> | </span>
-  <a class="text-muted text-decoration-none text-blue" href="{% url 'inicio' %}">cancelar</a>
+  <button class="boton" type="submit">Confirmar</button>
+  <div class="mb-3 mt-3">
+    <a href="{% url 'change_password' %}">cambiar contraseña</a>
+    <span> | </span>
+    <a href="{% url 'inicio' %}">cancelar</a>
+  </div>
 </form>
 
 {% endblock %}

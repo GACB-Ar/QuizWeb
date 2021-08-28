@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<style>
+  main{
+    background-color: rgb(74, 74, 226);
+  }
+</style>
+<h2 class="py-1 text-center">Resultado</h2>
+<div class="text-container">
+  {% if request.user.is_authenticated %}
+  <div class="text-center">
+    jugador: {{ request.user.username }} | puntaje de ésta ronda: {{ score }}
+  </div>
+  <div class="text-center">
+    correctas: {{ correct }} | incorrectas: {{ wrong }} | total de preguntas: {{ numeroPregunta }}
+  </div>
+  <div class="text-center">
+    <a class="boton" href="{% url 'inicio' %}"> volver </a>
+  </div>
+  <div class="text-center">
+    <p>También puedes compartir tus resultados desde los enlances ubicados en el pie de página</p>
+  </div>
+  {% else %}
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <a class="btn btn-lg btn-outline-primary" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
+    <a class="btn btn-lg btn-outline-success" href="{% url 'crear_usuario' %}">Registrarse</a>
+  </div>
+  {% endif %}
+
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+
+{% endblock %}

@@ -1,21 +1,52 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+<section>
+  <h1>BIENVENIDOS A JUGAR</h1>
+  <div class="somos-descripcion">
+    
+      <div class="somos">
+        <h2>INTEGRANTES</h2>
+        <ul>
+          <li>Franco Barreto</li>
+          <li>Estela Rios</li>
+          <li>Grego apellido</li>
+          <li>Mati Apellido</li>
+          <li>Angel Fernández</li>
+        </ul>
+      </div>
+      <div class="descripcion">
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos un grupo de estudiantes que emprendieron camino en el maravilloso mundo de la programación.
+          Los queremos invitar a <span class="span">JUGAR</span> en nuestra aplicación de preguntas y respuestas. Adelante
+        </p>
+      </div>
+  </div>
 
-<div class="py-5 text-center container">
+</section>
+
+
+<section class="container">
+  
   {% if request.user.is_authenticated %}
   <p>usuario: {{request.user.username }}</p>
-  <p>puntaje: {{request.user.puntaje }}</p>
-  <a class="btn btn-primary" href="{% url 'editar_usuario' %}">Editar Perfil</a>
   {% if request.user.is_staff %}
-  <a class="btn btn-primary" href="/admin/core/quesmodel/add">Agregar Preguntas</a>
+  <div class="container">
+    <a class="jugar" href="/admin/core/quesmodel/add">Agregar Preguntas</a>
+    <a class="jugar" href="/admin/users/perfil/">Administrar Usuarios</a>
+  </div>
   {% else %}
-  <a class="btn btn-primary" href="{% url 'jugar' %}">Jugar</a>
+  
+  <p>puntaje: {{request.user.puntaje }}</p>
+  <div class="container">
+    <a class="jugar" href="{% url 'jugar' %}">JUGAR</a>
+  </div>
   {% endif %}
-  <a class="btn btn-primary" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
   {% else %}
-  <a class="btn btn-primary" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
-  <a class="btn btn-primary" href="{% url 'crear_usuario' %}">Registrarse</a>
+  <div class="container">
+    <a class="jugar" href="{% url 'iniciar_sesion' %}">Iniciar Sesión</a>
+    <a class="jugar" href="{% url 'crear_usuario' %}">Registrarse</a>
+  </div>
   {% endif %}
 
   {% if messages %}
@@ -25,6 +56,6 @@
     {% endfor %}
   </ul>
   {% endif %}
-</div>
+</section>
 
 {% endblock %}

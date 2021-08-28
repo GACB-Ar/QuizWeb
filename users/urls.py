@@ -3,21 +3,10 @@ from . import views
 from django.contrib.auth import views as auth_user_views
 
 urlpatterns = [
-  #vista de registrarse
-  path(
-    "formulario/",
-    views.crear_usuario,
-    name="formulario"
-  ),
-  #vista de iniciar sesion
-
-  path("inicio_de_sesion/", views.iniciar_sesion, name="inicio_de_sesion"),
   #login
   path(
     "iniciar_sesion/",
-    auth_user_views.LoginView.as_view(
-      template_name="cuenta/login.html",
-    ),
+    views.iniciar_sesion,
     name="iniciar_sesion"
   ),
 
@@ -44,11 +33,8 @@ urlpatterns = [
 
   #cambiar contraseña
   path(
-      "cambiar_pass/",
-    auth_user_views.PasswordChangeView.as_view(
-      template_name="cuenta/cambiar_pass.html"
-    ),
+    "cambiar_pass/",
+    views.pass_cambiada,
     name="change_password"
-  ),
-  path("cambiado/", views.pass_cambiada, name="password_change_done")
+  )
 ]

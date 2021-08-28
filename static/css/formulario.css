@@ -7,6 +7,7 @@
 
 body {
     background: linear-gradient(to right, blue, rgba(255, 255, 255, 0.596), green);
+    height: 490px;
 }
 
 .form-registrar {
@@ -66,6 +67,10 @@ body {
     color: #fff;
     margin: 16px 0;
     font-size: 16px;
+}
+.boton:active{
+    opacity: 20%;
+    cursor: pointer;
 }
 
 

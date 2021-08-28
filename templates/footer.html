@@ -1,7 +1,17 @@
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer">
   <div class="container">
     <address class="text-muted text-center">
       Informatorio 2021 - Comisión 6 - Grupo 7
     </address>
+    {% load social_share %}
+    <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <li class="ms-3 text-muted">{% post_to_facebook object_or_url "Facebook!" %}</li>
+        <li class="ms-3 text-muted">{% post_to_whatsapp object_or_url "WhatsApp!" %}</li>
+        <li class="ms-3 text-muted">{% post_to_linkedin object_or_url %}</li>
+        <li class="ms-3 text-muted">{% save_to_pinterest object_or_url %}</li>
+        <li class="ms-3 text-muted">{% add_pinterest_script %}</li>
+      </ul>
+    </div>
   </div>
 </footer>

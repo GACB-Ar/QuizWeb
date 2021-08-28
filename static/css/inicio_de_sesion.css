@@ -53,9 +53,11 @@ body {
 }
 
 .form-registrar a:hover {
+    
     color: #fff;
     text-decoration: underline;
 }
+
 
 .boton {
     width: 100%;

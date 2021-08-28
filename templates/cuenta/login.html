@@ -2,22 +2,19 @@
 
 {% block contenido %}
 
-<form class="mt-5 form-signin text-center" method="POST">
+<form class="form-registrar" method="POST">
   {% csrf_token %}
-
-  {% load static %}
-  <img class="mb-4" width="72" height="57" role="img" src="{% static 'images/quiz.svg' %}" alt="logo">
-  <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
-  <div class="form-floating">
-    <div>
+  <h2>Iniciar Sesión</h2>
+  <div>
+    <label>
       {{ form.username.label_tag }}
-    </div>
+    </label>
     {{form.username}}
   </div>
-  <div class="form-floating">
-    <div>
+  <div>
+    <label>
       {{ form.password.label_tag }}
-    </div>
+    </label>
     {{form.password}}
   </div>
 
@@ -26,9 +23,8 @@
     Usuario o Contraseña Incorrectos
   </div>
   {% endif %}
-  <button class="mt-3 btn btn-lg btn-primary" type="submit">Iniciar</button>
-  <p class="mt-3 mb-3 text-muted"><a class="text-decoration-none text-blue"
-      href="{% url 'crear_usuario' %}">registrarse</a></p>
+  <button class="boton" type="submit">Iniciar Sesión</button>
+  <p class="p"><a href="{% url 'crear_usuario' %}">¿No tienes una cuenta?</a></p>
 </form>
 
 {% endblock %}
