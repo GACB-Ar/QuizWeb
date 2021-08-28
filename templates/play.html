@@ -2,8 +2,8 @@
 
 {% block contenido %}
 
-<h2 class="py-1 text-center">Jugar</h2>
-<div align="right "><span id="displaytimer" class="h1 text-danger">10</span></div>
+
+<div class="reloj"><p id="displaytimer" class="numerito">25</p></div>
 <section class="section-1" id="section-1">
   <div class="text-container">
     <h3>{{form.category}}</h3>
@@ -68,7 +68,7 @@
 
     const $timer = document.getElementById('displaytimer'),
       $inputtag = document.getElementById('timer');
-    let t = 10
+    let t = 25
     let intervalo = setInterval(() => {
       t -= 1
       $timer.textContent = t

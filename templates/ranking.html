@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+  .ranking{
+    position: relative;
+    margin-bottom: 5px;
+    left: 590px;
+    font-family: 'Rampart One', cursive;
+    font-size: 45px;
+    font-weight: bold;
+    color: rgb(93, 58, 11);
+  }
+  .podio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .podio>p{
+    
+    padding-bottom: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Rampart One', cursive;
+    font-size: 25px;
+    font-weight: bold;
+  }
 
-<h1 class="py-1 text-center">Ranking</h1>
-<div class="py-5 text-center container">
+</style>
+<h1 class="ranking">Ranking</h1>
+<div class="podio">
   {% if request.user.is_authenticated %}
   {% for user in form %}
   <p># {{ forloop.counter }}: {{ user.username }} | {{ user.puntaje }}</p>

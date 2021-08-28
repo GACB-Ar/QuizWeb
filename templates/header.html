@@ -1,5 +1,20 @@
 <header>
   {% load static %}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+    .menu{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .menu li{
+      padding-right: 10px;
+      font-size: 20px;
+      font-weight: bolder;
+      font-family: 'Rampart One', cursive;
+      color: rgb(93, 58, 11);
+    }
+  </style>
   <div class="logo">
     <h2><a href="{% url 'inicio' %}">CARPINCHO</a></i></h2>
   </div>
@@ -10,7 +25,7 @@
     <li><a class="nav-link text-white" href="/admin/core/quesmodel/add">agregar preguntas</a></li>
     <li><a class="nav-link text-white" href="/admin/users/perfil/">usuarios</a></li>
     {% else %}
-    <li class="nav-link text-white">puntaje: {{request.user.puntaje }}</li>
+    <li class="nav-link text-white">Puntaje: <b>{{request.user.puntaje }}</b> </li>
     <li><a class="nav-link text-white" href="{% url 'ranking' %}">ranking</a></li>
     {% endif %}
     <li><a class="nav-link text-white" href="{% url 'editar_usuario' %}">editar perfil</a></li>

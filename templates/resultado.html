@@ -2,24 +2,62 @@
 
 {% block contenido %}
 <style>
-  main{
-    background-color: rgb(74, 74, 226);
+  @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+  .resultado{
+    position: relative;
+    margin-bottom: 5px;
+    left: 590px;
+    font-family: 'Rampart One', cursive;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(93, 58, 11);
   }
+  .text-container{
+    line-height: 50px;
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  .text-center1{
+    margin-top: 50px;
+    background-color: blue;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 5px;
+    
+  }
+  .text-center1>a{
+    padding: 5px;
+  }
+  .text-center1>a:hover{
+    background-color: cornflowerblue;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
 </style>
-<h2 class="py-1 text-center">Resultado</h2>
+<h2 class="resultado">Resultado</h2>
 <div class="text-container">
   {% if request.user.is_authenticated %}
   <div class="text-center">
-    jugador: {{ request.user.username }} | puntaje de ésta ronda: {{ score }}
+    Jugador: {{ request.user.username }} <br>
+    Puntaje de ésta ronda: {{ score }}
   </div>
   <div class="text-center">
-    correctas: {{ correct }} | incorrectas: {{ wrong }} | total de preguntas: {{ numeroPregunta }}
+    Correctas: {{ correct }} | Incorrectas: {{ wrong }} <br>
+    Total de preguntas: {{ numeroPregunta }}
   </div>
-  <div class="text-center">
-    <a class="boton" href="{% url 'inicio' %}"> volver </a>
-  </div>
+  
   <div class="text-center">
     <p>También puedes compartir tus resultados desde los enlances ubicados en el pie de página</p>
+  </div>
+  <div class="text-center1">
+    <a  href="{% url 'inicio' %}"> volver </a>
   </div>
   {% else %}
   <div class="d-grid gap-2 col-6 mx-auto">

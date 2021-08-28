@@ -17,6 +17,25 @@ body {
     padding: 0;
     counter-reset: points;
 }
+.reloj{
+   position: absolute;
+   left: 290px;
+   border-radius: 10px;
+   background-color: rgb(9, 9, 36); 
+   width: 60px;
+   height: 60px;
+}
+.numerito{
+    padding: 5px;
+    color: rgb(236, 220, 220);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+
+}
+.grid{
+    display: none;
+}
 
 a {
     text-decoration: none;
@@ -46,6 +65,7 @@ section {
 
 .text-container {
     text-align: center;
+    line-height: 30px;
 }
 
 .quiz-options {
