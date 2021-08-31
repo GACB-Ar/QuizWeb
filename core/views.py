@@ -3,11 +3,23 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from users import models
 import random
+from datetime import date, datetime
+from django.utils.timezone import now
 
 
 def inicio(request):
   template = "index.html"
-  contexto = {}
+  # fecha2 = now()
+  fecha = date.today
+  usuarios = models.Perfil.objects.filter(is_staff=False).count()
+  # jugando = models.Perfil.objects.filter(is_staff=False).values('last_login')
+  ultimo = models.Perfil.objects.filter(is_staff=False).latest('last_login')
+  contexto = {
+    'usuarios': usuarios,
+    'fecha': fecha,
+    # 'fecha2': fecha2,
+    'ultimo': ultimo
+  }
   return render(request, template, contexto)
 
 @login_required
