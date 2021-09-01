@@ -1,33 +1,56 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
+<style>
+  .aside {
+    position: absolute;
+    top: 30vh;
+    left: 1vw;
+    text-align: center;
+	line-height: 1.5rem;
+	max-width: 25vw;
+  }
+  
+  .aside p > span {
+	font-weight: 900;
+  }
+</style>
+
 <section>
   <h1>BIENVENIDOS A JUGAR</h1>
   <div class="somos-descripcion">
-    
-      <div class="somos">
-        <h2>INTEGRANTES</h2>
-        <ul>
-          <li>Franco Barreto</li>
-          <li>Estela Rios</li>
-          <li>Grego apellido</li>
-          <li>Mati Apellido</li>
-          <li>Angel Fernández</li>
-        </ul>
-      </div>
-      <div class="descripcion">
-        <h2>¿Quiénes somos?</h2>
-        <p>Somos un grupo de estudiantes que emprendieron camino en el maravilloso mundo de la programación.
-          Los queremos invitar a <span class="span">JUGAR</span> en nuestra aplicación de preguntas y respuestas. Adelante
-        </p>
-      </div>
+    <div class="somos">
+      <h2>INTEGRANTES</h2>
+      <ul>
+		<li>Angel Fernández</li>
+		<li>Estela Ríos</li>
+        <li>Franco Barreto</li>
+        <li>Gerónimo Céspedes</li>
+        <li>Matías Gauna</li>
+      </ul>
+    </div>
+    <div class="descripcion">
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos un grupo de estudiantes que emprendieron camino en el maravilloso mundo de la programación.
+        Los queremos invitar a <span class="span">JUGAR</span> en nuestra aplicación de preguntas y respuestas. Adelante
+      </p>
+    </div>
   </div>
-
 </section>
 
+<aside class="aside">
+  <p>
+    <span>{{ fecha }}</span>
+  </p>
+  <p>
+    jugadores registrados: <span>{{ usuarios }}</span>
+  </p>
+  <p>
+    último acceso jugador: <span>{{ ultimo.username }}</span>
+  </p>
+</aside>
 
 <section class="container">
-  
   {% if request.user.is_authenticated %}
   <p>usuario: {{request.user.username }}</p>
   {% if request.user.is_staff %}
@@ -36,7 +59,11 @@
     <a class="jugar" href="/admin/users/perfil/">Administrar Usuarios</a>
   </div>
   {% else %}
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 7d77e19ac740edc7f4dcb5f6bfc09e1357ba2ef3
   <p>puntaje: {{request.user.puntaje }}</p>
   <div class="container">
     <a class="jugar" href="{% url 'jugar' %}">JUGAR</a>
