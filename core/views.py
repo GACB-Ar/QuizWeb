@@ -35,6 +35,13 @@ def ranking(request):
   }
   return render(request, "ranking.html", context)
 
+@login_required
+def ranking(request):
+  form = models.Perfil.objects.filter(is_staff=False).order_by('-puntaje').values('username', 'puntaje')[:10]
+  context = {
+    'form': form
+  }
+  return render(request, "ranking.html", context)
 
 @login_required
 def resultado(request):
