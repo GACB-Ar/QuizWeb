@@ -1,7 +1,9 @@
 <header>
   {% load static %}
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+    
     .menu{
       display: flex;
       justify-content: center;
@@ -17,12 +19,24 @@
     }
     .logoC{
       width:200x;
-      height:150px; 
+      height:100px;
+      position: relative;
+      top: 20px;
+    }
+    .logo>h2>a{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0px;
+      font-family: 'Sigmar One', cursive;
+      color: rgb(238, 153, 93);
       
     }
+    
   </style>
   <div class="logo">
-    <h2><a href="{% url 'inicio' %}"><img src="../static/images/capivara.png" alt="logo" class="logoC"></a></h2>
+    <h2><a href="{% url 'inicio' %}"><img src="../static/images/capivara.png" alt="logo" class="logoC">CARPI</a></h2>
   </div>
 
   <ul class="menu">
