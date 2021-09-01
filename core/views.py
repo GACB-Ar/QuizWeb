@@ -3,11 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .models import *
 from users import models
 import random
-<<<<<<< HEAD
-=======
 from datetime import date, datetime
 from django.utils.timezone import now
->>>>>>> 7d77e19ac740edc7f4dcb5f6bfc09e1357ba2ef3
 
 
 def inicio(request):
@@ -29,8 +26,6 @@ def inicio(request):
 def compartir(request):
   return render(request, "share.html")
 
-<<<<<<< HEAD
-=======
 
 @login_required
 def ranking(request):
@@ -39,7 +34,6 @@ def ranking(request):
     'form': form
   }
   return render(request, "ranking.html", context)
->>>>>>> 7d77e19ac740edc7f4dcb5f6bfc09e1357ba2ef3
 
 @login_required
 def ranking(request):
@@ -58,17 +52,6 @@ def resultado(request):
 
 
 @login_required
-<<<<<<< HEAD
-def resultado(request):
-  if request.method != "POST":
-    return redirect('inicio')
-  else:
-    return render(request, "resultado.html")
-
-
-@login_required
-=======
->>>>>>> 7d77e19ac740edc7f4dcb5f6bfc09e1357ba2ef3
 def jugar(request):
   '''
     crea contador de preguntas
@@ -112,20 +95,10 @@ def jugar(request):
       questions = QuesModel.objects.get(pk=int(request.POST.get("ID")))
       opcionSeleccionada=request.POST.get("opcionMarcada")
       if request.POST.get(opcionSeleccionada) == questions.ans:
-<<<<<<< HEAD
-        # score = int(request.POST.get("score"))
-        score += int(request.POST.get("timer")) * 10
-        # correct = int(request.POST.get("correct")) + 1
-        correct += 1
-        print('puntaje:', score, 'corectas:', correct, 'Nro Pregunta:', numeroPregunta)
-      else:
-        # wrong = int(request.POST.get("wrong")) + 1
-=======
         score += int(request.POST.get("timer")) * 10
         correct += 1
         print('puntaje:', score, 'corectas:', correct, 'Nro Pregunta:', numeroPregunta)
       else:
->>>>>>> 7d77e19ac740edc7f4dcb5f6bfc09e1357ba2ef3
         wrong += 1
         print('incorrectas:', wrong, 'Nro Pregunta:', numeroPregunta)
       numeroPregunta += 1 # próxima pregunta
@@ -147,20 +120,10 @@ def jugar(request):
       questions = QuesModel.objects.get(pk=int(request.POST.get("ID")))
       opcionSeleccionada = request.POST.get("opcionMarcada")
       if request.POST.get(opcionSeleccionada) == questions.ans:
-<<<<<<< HEAD
-        # score = int(request.POST.get("score")) + 10
-        score += int(request.POST.get("timer")) * score
-        # correct = int(request.POST.get("correct")) + 1
-        correct += 1
-        print('puntaje:', score, 'corectas:', correct, 'Nro Pregunta:', numeroPregunta)
-      else:
-        # wrong = int(request.POST.get("wrong")) + 1
-=======
         score += int(request.POST.get("timer")) * score
         correct += 1
         print('puntaje:', score, 'corectas:', correct, 'Nro Pregunta:', numeroPregunta)
       else:
->>>>>>> 7d77e19ac740edc7f4dcb5f6bfc09e1357ba2ef3
         wrong += 1
         print('incorrectas:', wrong, 'Nro Pregunta:', numeroPregunta)
       
