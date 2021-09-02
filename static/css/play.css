@@ -370,25 +370,31 @@ h1::before {
 
 /* MEDIA QUERY */
 
-@media (max-width: 420px) {
+@media (max-width: 690px) {
     body {
-        font-size: .8rem;
+        font-size: 1.5rem;
     }
 
     main {
-        width: 92%;
+        width: 100%;
     }
 
-    section {
-        background: linear-gradient(to right, #3f2b96, #1f0961);
+    .quiz-options {
+        background:  rgb(2, 20, 53);  
+        border-radius: 10px;
+        box-shadow: 7px -13px 37px #000;
+        font-size: 3rem;
+        
     }
 
     label {
-        font-size: .71rem;
+        font-size: 2rem;
+        color: rgb(158, 155, 155);
     }
 
     label .alphabet {
         margin: 0 .9rem 0 .7rem;
+        color: rgb(158, 155, 155);
     }
 
     /* .jshdgdgwgdwfdfwdwjfdjwwdwdco:checked+label {
@@ -432,10 +438,10 @@ h1::before {
     .refresh-content {
         display: grid;
         font-size: .8rem;
-    } */
-}
+    } 
+}*/
 
-@media (max-width: 325px) {
+/*@media (max-width: 325px) {
 
     label {
         font-size: .63rem;
@@ -451,6 +457,6 @@ h1::before {
 
     label .jfdedgwfzexf4hjin {
         width: 12px;
-    } */
+    } 
 
-}
+}*/

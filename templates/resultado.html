@@ -39,21 +39,45 @@
     border-radius: 5px;
     text-align: center;
   }
+  @media(max-width:600px){
+    
+    .text-center{
+      color: rgb(158, 155, 155);
+      font-size: 2.5rem;
+      text-align: center;
+      line-height: 60px;
+    }
+    .jugador{
+      font-size: 3rem;
+      border-radius: 10px;
+      box-shadow: 7px 13px 13px #000;
+      margin-top: 1rem;
+      margin-bottom: 4rem;
+
+    }
+    
+    .textop{
+      margin-top: 4rem;
+      line-height: 30px;
+      border-radius: 10px;
+      box-shadow: 7px 13px 13px #000;
+    }
+  }
   
 </style>
 <h2 class="resultado">Resultado</h2>
 <div class="text-container">
   {% if request.user.is_authenticated %}
-  <div class="text-center">
+  <div class="text-center jugador">
     Jugador: {{ request.user.username }} <br>
-    Puntaje de ésta ronda: {{ score }}
   </div>
-  <div class="text-center">
+  <div class="text-center puntaje">
+    Puntaje de ésta ronda: {{ score }}
     Correctas: {{ correct }} | Incorrectas: {{ wrong }} <br>
     Total de preguntas: {{ numeroPregunta }}
   </div>
   
-  <div class="text-center">
+  <div class="text-center textop">
     <p>También puedes compartir tus resultados desde los enlances ubicados en el pie de página</p>
   </div>
   <div class="text-center1">

@@ -11,6 +11,7 @@ body {
 
 .form-registrar {
     width: 40%;
+    height: auto;
     background: #24303c;
     padding: 30px;
     margin: auto;
@@ -30,7 +31,7 @@ body {
 
 .form-input {
     width: 100%;
-    background: #24303c;
+    background: #3b85cf;
     color: #fff;
     padding: 10px;
     border-radius: 4px;

@@ -6,15 +6,11 @@
   {% csrf_token %}
   <h2>Iniciar Sesión</h2>
   <div>
-    <label>
-      {{ form.username.label_tag }}
-    </label>
+    
     {{form.username}}
   </div>
   <div>
-    <label>
-      {{ form.password.label_tag }}
-    </label>
+    
     {{form.password}}
   </div>
 
@@ -24,7 +20,7 @@
   </div>
   {% endif %}
   <button class="boton" type="submit">Iniciar Sesión</button>
-  <p class="p"><a href="{% url 'crear_usuario' %}">¿No tienes una cuenta?</a></p>
+  
 </form>
 
 {% endblock %}

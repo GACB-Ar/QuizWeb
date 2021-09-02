@@ -6,27 +6,19 @@
   {% csrf_token %}
   <h2>Formulario de Edición</h2>
   <div>
-    <label for="{{form.first_name.id_for_label}}" id="nombre">
-      {{ form.first_name.label_tag }}
-    </label>
+    
     {{ form.first_name }}
   </div>
   <div>
-    <label for="{{form.last_name.id_for_label}}">
-      {{ form.last_name.label_tag }}
-    </label>
+   
     {{ form.last_name }}
   </div>
   <div>
-    <label for="{{form.email.id_for_label}}">
-      {{ form.email.label_tag }}
-    </label>
+    
     {{ form.email }}
   </div>
   <div>
-    <label for="{{form.username.id_for_label}}">
-      {{ form.username.label_tag }}
-    </label>
+    
     {{ form.username }}
   </div>
 
