@@ -1,24 +1,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family:'Montserrat', sans-serif;
-    
 }
-body{
+
+body {
    height: 490px;
 }
-header{
+
+header {
     background: linear-gradient(to right, blue, rgba(255, 255, 255, 0.596), green);
     display:flex;
     justify-content: space-between;
     
 }
 
-.logo>h2{
+.logo > h2 {
     padding-left:20px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -29,31 +31,36 @@ ul{
     display: flex;
     list-style-type: none;
 }
+
 a{
     text-decoration: none;
     display: inline-block;
     color: #fff;
     padding: 15px;
 }
+
 a:hover{
     background-color: rgba(29, 29, 219, 0.667);
     color: #fff;
     border-radius: 20px;
 }
+
 header,body,footer{
     font-family:'Roboto', sans-serif;
 }
+
 .open-menu,
-.close-menu{
+.close-menu {
     display: none;
 }
 
-main{
+main {
     width: 100%;
     min-height: 100%;
     margin-top: 50px;
 }
-section>h1{
+
+section > h1{
     font-family: 'Rampart One', cursive;
     font-size: 35px;
     font-weight: bold;
@@ -65,53 +72,55 @@ section>h1{
     margin-bottom: 30px;
     border-radius: 15px;
     box-shadow: 7px 13px 37px #000;
-
 }
-.somos-descripcion{
+
+.somos-descripcion {
     display: flex;  
     gap: 10px;
 }
-.descripcion>h2{
+
+.descripcion > h2 {
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom:20px;
 }
-.descripcion>p{
+
+.descripcion > p {
     padding-left: 1rem;
     padding-top: 1.8 rem;
     padding-bottom:1.8 rem;
     font-size: 2rem;
 }
-.somos{
+
+.somos {
     order: 5;
     width: 50%;
     border-radius: 4px;
     box-shadow: 7px 13px 37px #000;
-    
 }
-.somos>h2{
+
+.somos > h2 {
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom:10px;
-
 }
 
-.somos>ul{
+.somos > ul {
     display: flex;
     flex-direction: column;
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom:10px;
 }
-.somos>ul li{
+
+.somos > ul li{
     padding-bottom: 5px;
 }
+
 .descripcion{
     width: 50%;
     border-radius: 4px;
     box-shadow: 7px 13px 37px #000;
-    
-    
 }
 .span{
     color: darksalmon;
@@ -121,36 +130,39 @@ section>h1{
     display: flex;
     justify-content:space-around;
     align-items: center;
-    
-   
 }
-.plaza{
+
+.plaza {
     display: flex;
     flex-direction: column;
-    background: blueviolet url(./img/plazaCentral.jfif) no-repeat;
+    background: blueviolet no-repeat;
     background-size: cover;
     width: 33%;
     height: 340px;
     color: black;
 }
-.plaza>h2,.domo>h2,.escultura>h2{
+
+.plaza > h2,
+.domo > h2,
+.escultura > h2 {
     text-align: center;
     font-weight: bold;
 }
-.domo{
+
+.domo {
     display: flex;
     flex-direction: column;
-    background: blueviolet url(./img/domo.jpg) no-repeat;
+    background: blueviolet no-repeat;
     background-size: cover;
     width: 33%;
     height: 340px;
     color: black;
 }
 
-.escultura{
+.escultura {
     display: flex;
     flex-direction: column;
-    background: blueviolet url(./img/esculturaEntrada.jpg) no-repeat;
+    background: blueviolet no-repeat;
     background-size: cover;
     width: 33%;
     height: 340px;
@@ -158,7 +170,7 @@ section>h1{
     
 }
 
-.footer{
+.footer {
     position: sticky;
     margin: 5rem 0 0 0;
     width: 100%;
@@ -166,11 +178,11 @@ section>h1{
     color: black;
     background: linear-gradient(to right, blue, rgba(255, 255, 255, 0.76), green);
 }
+
 footer>p{
     font-size: 15px;
     font-weight:  bold;
     padding: 5px;
-    
 }
 
 @media (max-width:600px){
@@ -179,6 +191,7 @@ footer>p{
         background:  rgb(1, 7, 53);  
         font-weight: bold;
     }
+	
     header{
         background: rgb(1, 7, 53);
         display:flex;
@@ -187,24 +200,28 @@ footer>p{
         align-items: center;
         border-radius: 4px;
         box-shadow: 7px 13px 37px #000;
-    } 
+    }
+	
     section{
         display: flex;
         flex-direction: column;
         gap: 30px;
         background: rgb(1, 7, 53);
         color: rgb(158, 155, 155);
-       
+
     }
+	
     .somos-descripcion{
         flex-direction: column;
         gap: 30px;
         
     }
+	
     .somos-descripcion h2{
         text-align: center;
 
     }
+	
     .somos, .descripcion{
         width: 100%;
         padding: 1.5rem 0;
@@ -224,6 +241,7 @@ footer>p{
         list-style-type: none;
         
     }
+	
     a{
         text-decoration: none;
         display: inline-block;
@@ -233,36 +251,43 @@ footer>p{
         padding-left: 5rem;
         padding-right: 5rem;
     }
+	
     a:hover{
         background-color: rgba(29, 29, 219, 0.667);
         color: #000;
         border-radius: 20px;
     }
+	
     header,body,footer{
         font-family:'Roboto', sans-serif;
     }
+	
     .open-menu,
     .close-menu{
-    display: block;
-    border: none;
-    background: none;
-    cursor: pointer;
+		display: block;
+		border: none;
+		background: none;
+		cursor: pointer;
     }
+	
     .open-menu{
         align-self: flex-end;
         width: 30px;
         height: 30px;
     }
+	
     section>h1{
         text-shadow: 15px 15px 25px rgb(14, 13, 13);
         color: rgb(80, 49, 8);
         font-size: 3rem;
         text-align: center;
     }
+	
     .container{
         flex-direction: column;
         gap: 20px;
     }
+	
     .jugar{
         border-radius: 15px;
         box-shadow: 7px 13px 37px #000;
@@ -273,16 +298,17 @@ footer>p{
         text-align: center;
 
     }
+	
     .footer{
         background:  rgb(1, 7, 53);  
         border-radius: 10px;
         box-shadow: 7px -13px 37px #000;
     }
+	
     address{
         color: rgb(158, 155, 155);
         padding-top: 2rem;
         font-size: 2rem;
-
     }
 }
 
