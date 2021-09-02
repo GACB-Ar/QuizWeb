@@ -3,21 +3,36 @@
 {% block contenido %}
 <style>
   .aside {
-    position: absolute;
-    top: 30vh;
-    left: 1vw;
+    width: 100%;
     text-align: center;
-	line-height: 1.5rem;
-	max-width: 25vw;
+	  line-height: 2rem;
+    padding: 3.5rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    box-shadow: 7px 13px 37px #000;
   }
   
   .aside p > span {
 	font-weight: 900;
   }
+  
 </style>
 
 <section>
   <h1>BIENVENIDOS A JUGAR</h1>
+  <div>
+    <aside class="aside">
+      <p>
+        <span>{{ fecha }}</span>
+      </p>
+      <p>
+        jugadores registrados: <span>{{ usuarios }}</span>
+      </p>
+      <p>
+        último acceso jugador: <span>{{ ultimo.username }}</span>
+      </p>
+    </aside>
+  </div>
   <div class="somos-descripcion">
     <div class="somos">
       <h2>INTEGRANTES</h2>
@@ -38,17 +53,7 @@
   </div>
 </section>
 
-<aside class="aside">
-  <p>
-    <span>{{ fecha }}</span>
-  </p>
-  <p>
-    jugadores registrados: <span>{{ usuarios }}</span>
-  </p>
-  <p>
-    último acceso jugador: <span>{{ ultimo.username }}</span>
-  </p>
-</aside>
+
 
 <section class="container">
   {% if request.user.is_authenticated %}

@@ -78,10 +78,39 @@ body {
     html {
         font-size: 10px;
     }
+    body{
+        background: rgb(1, 7, 53);
+    }
 
     .form-registrar {
-        width: 60%;
+        width: 90%;
+        height: 100%;
+        background: rgb(1, 7, 53);
+        border-radius: 4px;
+        box-shadow: 7px 13px 37px #000;
 
+    }
+    .form-registrar>h2{
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        font-size: 3rem;
+        color: rgb(167, 161, 161);
+    }
+    .form-registrar div{
+        margin-top: 3rem;
+    }
+    .boton{
+        margin-top: 5rem;
+        background-color: rgb(7, 7, 78);
+        padding: 15px 0 15px 0;
+        font-size: 2rem;
+        color: rgb(146, 143, 143);
+        border-radius: 10px;
+    }
+    .boton:hover{
+        margin-top: 5rem;
+        background-color: rgb(13, 13, 148);
+        color: rgb(190, 186, 186);
     }
 
     .form-registrar p {
@@ -90,4 +119,5 @@ body {
         font-size: 12px;
         line-height: 40px;
     }
+    
 }
