@@ -1,5 +1,7 @@
 <header>
+  
   {% load static %}
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
@@ -8,8 +10,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      
     }
+    
     .menu li{
       padding-right: 10px;
       font-size: 20px;
@@ -17,12 +19,14 @@
       font-family: 'Rampart One', cursive;
       color: rgb(93, 58, 11);
     }
-    .logoC{
+    
+    .logoC {
       width:200px;
       height:100px;
       position: relative;
       top: 20px;
     }
+    
     .logo>h2>a{
       display: flex;
       flex-direction: column;
@@ -31,30 +35,28 @@
       gap: 0px;
       font-family: 'Sigmar One', cursive;
       color: rgb(238, 153, 93);
-      
     }
-    @media (max-width: 600px){
-      .logo{
+    
+    @media (max-width: 600px) {
+      
+      .logo {
           width: 70%;
           height: auto;
-         
       }
-      .logo>h2>a{
+      
+      .logo > h2 > a {
         font-size: 3rem;
-        
-
       }
-      .logoC{
+      
+      .logoC {
         width: 100%;
         height: auto;
         position: relative;
         top: 35px;
-        
+      }
     }
-    
-
-    
   </style>
+  
   <div class="logo">
     <h2><a href="{% url 'inicio' %}"><img src="{% static 'images/capivara.png' %}" alt="logo" class="logoC">CARPI</a></h2>
   </div>
