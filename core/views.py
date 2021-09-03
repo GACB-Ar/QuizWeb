@@ -5,6 +5,7 @@ from users import models
 import random
 from datetime import date, datetime
 from django.utils.timezone import now
+from django.db.models import Q
 
 
 def inicio(request):
@@ -26,7 +27,7 @@ def compartir(request):
 
 @login_required
 def ranking(request):
-  form = models.Perfil.objects.filter(is_staff=False).order_by('-puntaje').values('username', 'puntaje')[:10]
+  form = models.Perfil.objects.filter(is_staff=False).exclude(puntaje=None).order_by('-puntaje').values('username', 'puntaje')[:10]
   context = {
     'form': form
   }
@@ -57,7 +58,13 @@ def jugar(request):
     score = int(request.POST.get("score"))
     correct = int(request.POST.get("correct"))
     wrong = int(request.POST.get("wrong"))
-    ids = list(request.POST.get("ids"))
+    if numeroPregunta == 1:
+        ids = request.POST.get("ids")[1:-1]
+        ids = [int(ids)]
+    else:
+        temp = request.POST.get("ids")[1:-1].split(", ")
+        ids = list(map(int,temp))
+    print('obteniendo valor:', ids)
   else:
     numeroPregunta = 1 
     score = 0
@@ -70,6 +77,7 @@ def jugar(request):
     while str(electorDeCategoria) in ids:
       electorDeCategoria = random.choice(range(QuesModel.objects.all().count()))
     ids.append(electorDeCategoria)
+    print('entrando 1ra vez:', ids)
     form = QuesModel.objects.get(pk=electorDeCategoria)
     context = {
       'form':form,
@@ -80,6 +88,7 @@ def jugar(request):
       'ids': ids
     }
     return render(request, "play.html", context)
+  
   elif  request.method == 'POST':
     if numeroPregunta < 5:
       questions = QuesModel.objects.get(pk=int(request.POST.get("ID")))
@@ -96,6 +105,7 @@ def jugar(request):
       while str(electorDeCategoria) in ids:
         electorDeCategoria = random.choice(range(QuesModel.objects.all().count()))
       ids.append(electorDeCategoria)
+      print('entrando 2da vez:', ids)
       questions = QuesModel.objects.get(pk=electorDeCategoria)
       context = {
         'score':score,
